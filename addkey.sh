@@ -1,7 +1,7 @@
 #!/bin/sh
 
 KEY_DIR="/tmp"
-PCR="0,7"
+PCR="0,2,4,7"
 tpm2_evictcontrol -C o -c 0x81000000
 tpm2_createpolicy --policy-pcr -l sha1:$PCR -L policy.digest && \
 tpm2_createprimary -C e -g sha1 -G rsa -c primary.context && \
